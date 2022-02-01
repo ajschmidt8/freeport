@@ -12,7 +12,6 @@ builds:
       - darwin
     goarch:
       - amd64
-      - "386"
       - arm64
     goarm:
       - "6"
@@ -21,6 +20,9 @@ builds:
 
 archives:
   - format: binary
+    replacements:
+      amd64: x86_64
+      arm64: aarch64
 
 checksum:
   name_template: "{{ .ProjectName }}_{{ .Version }}_checksums.txt"
